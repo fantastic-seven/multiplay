@@ -1,0 +1,12 @@
+//connect to the SSMMS
+//init online functionality
+	server = new SSMMS(true);
+
+//connect our handlers
+	server.onMessage = this.MessageReceived;
+	server.onRoomsReceived = this.RoomsReceived;
+	server.onUserDisconnected = this.UserDisconnected;
+	server.onError = this.ErrorReceived;
+
+	server.Connect(server);
+	server.GetRooms();
